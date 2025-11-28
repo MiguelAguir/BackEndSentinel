@@ -1,0 +1,11 @@
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Domain\bin\Debug\net9.0\SentinelBackend.Domain.deps.json
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Domain\bin\Debug\net9.0\SentinelBackend.Domain.dll
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Domain\bin\Debug\net9.0\SentinelBackend.Domain.pdb
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Domain\obj\Debug\net9.0\SentinelBackend.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Domain\obj\Debug\net9.0\SentinelBackend.Domain.AssemblyInfoInputs.cache
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Domain\obj\Debug\net9.0\SentinelBackend.Domain.AssemblyInfo.cs
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Domain\obj\Debug\net9.0\SentinelBackend.Domain.csproj.CoreCompileInputs.cache
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Domain\obj\Debug\net9.0\SentinelBackend.Domain.dll
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Domain\obj\Debug\net9.0\refint\SentinelBackend.Domain.dll
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Domain\obj\Debug\net9.0\SentinelBackend.Domain.pdb
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Domain\obj\Debug\net9.0\ref\SentinelBackend.Domain.dll

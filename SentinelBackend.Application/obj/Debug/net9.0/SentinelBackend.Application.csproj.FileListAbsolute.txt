@@ -1,0 +1,15 @@
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Application\bin\Debug\net9.0\SentinelBackend.Application.deps.json
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Application\bin\Debug\net9.0\SentinelBackend.Application.dll
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Application\bin\Debug\net9.0\SentinelBackend.Application.pdb
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Application\bin\Debug\net9.0\SentinelBackend.Domain.dll
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Application\bin\Debug\net9.0\SentinelBackend.Domain.pdb
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Application\obj\Debug\net9.0\SentinelBackend.Application.csproj.AssemblyReference.cache
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Application\obj\Debug\net9.0\SentinelBackend.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Application\obj\Debug\net9.0\SentinelBackend.Application.AssemblyInfoInputs.cache
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Application\obj\Debug\net9.0\SentinelBackend.Application.AssemblyInfo.cs
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Application\obj\Debug\net9.0\SentinelBackend.Application.csproj.CoreCompileInputs.cache
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Application\obj\Debug\net9.0\Sentinel.C2786296.Up2Date
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Application\obj\Debug\net9.0\SentinelBackend.Application.dll
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Application\obj\Debug\net9.0\refint\SentinelBackend.Application.dll
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Application\obj\Debug\net9.0\SentinelBackend.Application.pdb
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Application\obj\Debug\net9.0\ref\SentinelBackend.Application.dll

@@ -1,0 +1,17 @@
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Infrastructure\bin\Debug\net9.0\SentinelBackend.Infrastructure.deps.json
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Infrastructure\bin\Debug\net9.0\SentinelBackend.Infrastructure.dll
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Infrastructure\bin\Debug\net9.0\SentinelBackend.Infrastructure.pdb
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Infrastructure\bin\Debug\net9.0\SentinelBackend.Application.dll
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Infrastructure\bin\Debug\net9.0\SentinelBackend.Domain.dll
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Infrastructure\bin\Debug\net9.0\SentinelBackend.Domain.pdb
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Infrastructure\bin\Debug\net9.0\SentinelBackend.Application.pdb
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Infrastructure\obj\Debug\net9.0\SentinelBackend.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Infrastructure\obj\Debug\net9.0\SentinelBackend.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Infrastructure\obj\Debug\net9.0\SentinelBackend.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Infrastructure\obj\Debug\net9.0\SentinelBackend.Infrastructure.AssemblyInfo.cs
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Infrastructure\obj\Debug\net9.0\SentinelBackend.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Infrastructure\obj\Debug\net9.0\Sentinel.495648EA.Up2Date
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Infrastructure\obj\Debug\net9.0\SentinelBackend.Infrastructure.dll
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Infrastructure\obj\Debug\net9.0\refint\SentinelBackend.Infrastructure.dll
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Infrastructure\obj\Debug\net9.0\SentinelBackend.Infrastructure.pdb
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Infrastructure\obj\Debug\net9.0\ref\SentinelBackend.Infrastructure.dll
