@@ -10,6 +10,7 @@ using SentinelBackend.Domain.Ports;
 using SentinelBackend.Infrastructure.Persistence;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
+using SentinelBackend.Api.Services;
 using SentinelBackend.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,9 +23,19 @@ FirebaseApp.Create(new AppOptions()
 
 // 2. DbContext + UnitOfWork
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("Supabase")));
+    options.UseNpgsql(
+            builder.Configuration.GetConnectionString("Supabase"),
+            npgsqlOptions =>
+            {
+                npgsqlOptions.EnableRetryOnFailure(5);           // ← retry automático
+                npgsqlOptions.CommandTimeout(30);
+                npgsqlOptions.RemoteCertificateValidationCallback((sender, certificate, chain, errors) => true);
+            })
+        .EnableSensitiveDataLogging(false)
+        .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<ReporteService>();
 
 // 3. Autenticación JWT con Firebase
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -41,32 +52,23 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
         options.Events = new JwtBearerEvents
         {
-            OnTokenValidated = async context =>
+            OnTokenValidated = context =>
             {
                 var uid = context.Principal?.FindFirst("user_id")?.Value;
-                if (string.IsNullOrEmpty(uid))
-                    return;
-
-                // Inyectamos el DbContext temporalmente para buscar el usuario
-                var dbContext = context.HttpContext.RequestServices.GetRequiredService<AppDbContext>();
-                var usuario = await dbContext.Usuarios
-                    .FirstOrDefaultAsync(u => u.FirebaseUid == uid);
-
-                if (usuario != null)
+                if (!string.IsNullOrEmpty(uid))
                 {
-                    // Añadimos los claims que necesitamos desde la DB real
+                    // Solo añadimos lo que ya viene del token
                     var claims = new List<Claim>
                     {
                         new Claim("user_id", uid),
-                        new Claim(ClaimTypes.Name, usuario.Nombre ?? usuario.Email),
-                        new Claim(ClaimTypes.Role, usuario.Rol ?? "usuario"),
-                        new Claim("role", usuario.Rol ?? "usuario"),
-                        new Claim("db_user_id", usuario.Id.ToString()) // opcional: el Guid real
+                        new Claim("db_user_id", "temp") // lo corregiremos después con middleware
                     };
 
-                    var identity = new ClaimsIdentity(claims, context.Scheme.Name);
-                    context.Principal = new ClaimsPrincipal(identity);
+                    var identity = context.Principal?.Identity as ClaimsIdentity;
+                    identity?.AddClaims(claims);
                 }
+
+                return Task.CompletedTask; // ← SIN ASYNC, SIN AWAIT, SIN DB
             }
         };
     });
@@ -123,8 +125,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseAuthentication();   // ← IMPORTANTE
-app.UseAuthorization();    // ← IMPORTANTE
 app.UseMiddleware<CurrentUserMiddleware>();
+app.UseAuthorization();    // ← IMPORTANTE
 app.MapControllers();
 
 app.Run();

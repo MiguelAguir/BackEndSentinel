@@ -9,3 +9,4 @@ C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Domain\obj\De
 C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Domain\obj\Debug\net9.0\refint\SentinelBackend.Domain.dll
 C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Domain\obj\Debug\net9.0\SentinelBackend.Domain.pdb
 C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Domain\obj\Debug\net9.0\ref\SentinelBackend.Domain.dll
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Domain\obj\Debug\net9.0\SentinelBackend.Domain.sourcelink.json

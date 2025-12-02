@@ -13,3 +13,4 @@ C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Application\o
 C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Application\obj\Debug\net9.0\refint\SentinelBackend.Application.dll
 C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Application\obj\Debug\net9.0\SentinelBackend.Application.pdb
 C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Application\obj\Debug\net9.0\ref\SentinelBackend.Application.dll
+C:\Users\angel\RiderProjects\SentinelBackendSimple\SentinelBackend.Application\obj\Debug\net9.0\SentinelBackend.Application.sourcelink.json

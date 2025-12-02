@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SentinelBackend.Domain.Entities;
 using SentinelBackend.Domain.Ports;
 using System.Security.Claims;
+using SentinelBackend.Application.DTOs;
 
 namespace SentinelBackend.Api.Controllers;
 
@@ -17,7 +18,14 @@ public class TareasController : ControllerBase
 
     private string FirebaseUid => User.FindFirst("user_id")?.Value!;
     private string Rol => User.FindFirst(ClaimTypes.Role)?.Value!;
-    private Guid UsuarioDbId => Guid.Parse(User.FindFirst("db_user_id")?.Value!);
+    private Guid UsuarioDbId
+    {
+        get
+        {
+            var claim = User.FindFirst("db_user_id")?.Value;
+            return Guid.TryParse(claim, out var id) ? id : Guid.Empty;
+        }
+    }
 
     // GET: Mis tareas
     [HttpGet("mis-tareas")]
@@ -116,18 +124,3 @@ public class TareasController : ControllerBase
         return NoContent();
     }
 }
-
-// DTOs (ponlos dentro del mismo archivo o en carpeta Dtos)
-public record CrearTareaDto(
-    string Titulo,
-    string? Descripcion,
-    DateTime? FechaLimite,
-    int Puntos,
-    bool EvidenciaRequerida,
-    Guid UsuarioId);
-
-public record ActualizarTareaDto(
-    string? Titulo,
-    string? Descripcion,
-    DateTime? FechaLimite,
-    int? Puntos);

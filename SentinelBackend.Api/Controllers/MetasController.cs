@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SentinelBackend.Domain.Entities;
 using SentinelBackend.Domain.Ports;
 using System.Security.Claims;
+using SentinelBackend.Application.DTOs;
 
 namespace SentinelBackend.Api.Controllers;
 
@@ -15,7 +16,14 @@ public class MetasController : ControllerBase
     public MetasController(IUnitOfWork uow) => _uow = uow;
 
     private string Rol => User.FindFirst(ClaimTypes.Role)?.Value!;
-    private Guid UsuarioDbId => Guid.Parse(User.FindFirst("db_user_id")?.Value!);
+    private Guid UsuarioDbId
+    {
+        get
+        {
+            var claim = User.FindFirst("db_user_id")?.Value;
+            return Guid.TryParse(claim, out var id) ? id : Guid.Empty;
+        }
+    }
 
     [HttpGet("mis-metas")]
     public async Task<IActionResult> GetMisMetas()
@@ -92,11 +100,3 @@ public class MetasController : ControllerBase
         return Ok(meta);
     }
 }
-
-public record CrearMetaDto(
-    string Titulo,
-    string? Descripcion,
-    int PuntosObjetivo,
-    DateTime FechaInicio,
-    DateTime? FechaFin,
-    Guid UsuarioId);

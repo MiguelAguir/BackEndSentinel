@@ -17,7 +17,6 @@ public class UnitOfWork : IUnitOfWork
     public IRepository<Logros> Logros { get; private set; }
     public IRepository<Gamificacion> Gamificacion { get; private set; }
     public IRepository<Perfiles> Perfiles { get; private set; }
-
     public UnitOfWork(AppDbContext context)
     {
         _context = context;

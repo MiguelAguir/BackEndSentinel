@@ -14,6 +14,6 @@ public interface IUnitOfWork : IDisposable
     IRepository<Logros> Logros { get; }
     IRepository<Gamificacion> Gamificacion { get; }
     IRepository<Perfiles> Perfiles { get; }
-
+    
     Task<int> SaveChangesAsync();
 }

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SentinelBackend.Domain.Entities;
 using SentinelBackend.Domain.Ports;
 using System.Security.Claims;
+using SentinelBackend.Application.DTOs;
 
 namespace SentinelBackend.Api.Controllers;
 
@@ -15,7 +16,14 @@ public class UsuariosController : ControllerBase
     public UsuariosController(IUnitOfWork uow) => _uow = uow;
 
     private string Rol => User.FindFirst(ClaimTypes.Role)?.Value!;
-    private Guid UsuarioDbId => Guid.Parse(User.FindFirst("db_user_id")?.Value!);
+    private Guid UsuarioDbId
+    {
+        get
+        {
+            var claim = User.FindFirst("db_user_id")?.Value;
+            return Guid.TryParse(claim, out var id) ? id : Guid.Empty;
+        }
+    }
 
     // POST: Registrar nuevo subordinado (solo supervisor)
     [HttpPost("registrar-subordinado")]
@@ -55,38 +63,5 @@ public class UsuariosController : ControllerBase
         if (usuario == null) return NotFound();
         return Ok(usuario);
     }
-    // ENDPOINT PÚBLICO (sin [Authorize])
-    [HttpPost("registro")]
-    [AllowAnonymous]  // ← IMPORTANTE
-    public async Task<IActionResult> Registro([FromBody] RegistroUsuarioDto dto)
-    {
-        // Validamos que solo se permita "usuario" o "supervisor"
-        if (dto.Rol != "usuario" && dto.Rol != "supervisor")
-            return BadRequest("Rol inválido");
-
-        var nuevo = new Usuarios
-        {
-            Id = Guid.NewGuid(),
-            Email = dto.Email,
-            Nombre = dto.Nombre,
-            Rol = dto.Rol,
-            SupervisorId = dto.Rol == "usuario" ? dto.SupervisorId : null,
-            FirebaseUid = dto.FirebaseUid,
-            Created_At = DateTime.UtcNow
-        };
-
-        await _uow.Usuarios.AddAsync(nuevo);
-        await _uow.SaveChangesAsync();
-
-        return Ok(new { mensaje = "Usuario creado correctamente", usuarioId = nuevo.Id });
-    }
-
-    public record RegistroUsuarioDto(
-        string Email,
-        string Nombre,
-        string Rol,           // "usuario" o "supervisor"
-        string FirebaseUid,
-        Guid? SupervisorId = null);  // obligatorio si es usuario
 }
 
-public record RegistrarUsuarioDto(string Email, string Nombre, string FirebaseUid);
